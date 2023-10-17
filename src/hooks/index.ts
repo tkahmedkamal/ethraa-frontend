@@ -16,5 +16,5 @@ export { default as useTheme } from "./useTheme";
 export { default as useSkeletonTheme } from "./useSkeletonTheme";
 export { default as useLanguage } from "./useLanguage";
 export { default as useAuthRedirect } from "./useAuthRedirect";
-export { default as useClickOutSide } from "./useClickOutSide";
+export { default as useClickOutSide } from "./useClickOutside";
 export { default as useEscape } from "./useEscape";
