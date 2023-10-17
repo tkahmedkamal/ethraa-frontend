@@ -1,0 +1,220 @@
+{
+  "app": "Ethraa",
+  "global": {
+    "all": "All",
+    "influential": "Influential",
+    "post": "Post",
+    "followers": "Followers",
+    "following": "Following",
+    "allFollowers": "All Followers",
+    "allFollowing": "All Following",
+    "loading": "Loading...",
+    "public": "Public",
+    "private": "Private",
+    "popular": "Popular",
+    "bookmark": "Bookmark",
+    "save": "Save",
+    "unSave": "Unsave",
+    "loadMore": "Load More",
+    "noLoadMore": "No more results",
+    "noPosts": "No posts, consider exploring other sections",
+    "noUserPosts": "You have no posts, start posting and engaging with the community",
+    "noBookmarksTitle": "Save posts for later",
+    "noBookmarksText": "Bookmark posts to easily find them in the future",
+    "choose": "Choose",
+    "postPublic": "Public Posts",
+    "postPrivate": "Private Posts",
+    "peopleYouMayKnowPage": "People You May Know",
+    "noResults": "No results, you may have some later",
+    "bookmarksCount": "Bookmarks Count"
+  },
+  "search": {
+    "placeholder": "Search here...",
+    "noResults": "No results, start searching now"
+  },
+  "alert": {
+    "activeAccount": "You must activate your account to be able to post"
+  },
+  "confirm": "Are you sure you want to delete?",
+  "suggestion": {
+    "you-know-them": "People You May Know",
+    "most-influential": "Most Influential"
+  },
+  "button": {
+    "sharePost": "Share Quote",
+    "editPost": "Edit Quote",
+    "follow": "Follow",
+    "unfollow": "Unfollow",
+    "login": "Login",
+    "signup": "Sign Up",
+    "send": "Send",
+    "delete": "Delete",
+    "edit": "Edit",
+    "cancel": "Cancel",
+    "resetPassword": "Reset Password",
+    "resendToken": "Resend Token",
+    "activeAccount": "Activate Your Account Now",
+    "updateMe": "Update Information",
+    "updatePassword": "Change Password",
+    "deactivate": "Deactivate Account",
+    "homePage": "Home page"
+  },
+  "sidebar": {
+    "home": "Home",
+    "profile": "Profile",
+    "bookmarks": "Bookmarks",
+    "search": "Search for a Friend",
+    "settings": "Settings",
+    "dashboard": "Dashboard",
+    "logout": "Logout"
+  },
+  "post": {
+    "quote": {
+      "required": "Post content is required"
+    },
+    "quoteFor": {
+      "minLength": "Quoted person's name must be at least 3 characters long"
+    },
+    "form": {
+      "quote": "Write your quote here",
+      "quoteFor": "Quoted by?"
+    },
+    "editTitle": "Edit Quote"
+  },
+  "user": {
+    "updateTitle": "Update Information",
+    "form": {
+      "name": "Enter your name",
+      "bio": "Enter a description about yourself",
+      "facebook": "Enter your Facebook username",
+      "twitter": "Enter your Twitter username"
+    }
+  },
+  "registration": {
+    "name": {
+      "required": "Name is required",
+      "minLength": "Name must be at least 3 characters long",
+      "maxLength": "Name can be up to 50 characters long"
+    },
+    "username": {
+      "required": "Username is required",
+      "minLength": "Username must be at least 3 characters long",
+      "maxLength": "Username can be up to 20 characters long",
+      "englishChar": "Enter English letters and numbers only, without spaces"
+    },
+    "email": {
+      "required": "Email is required",
+      "invalid": "Please enter a valid email address"
+    },
+    "password": {
+      "required": "Password is required",
+      "minLength": "Password must be at least 8 characters long",
+      "confirmRequired": "Password confirmation is required",
+      "notMatch": "Passwords do not match"
+    },
+    "role": "Role should be either: Admin or User",
+    "isAdmin": "Admin permission must be [true, false]",
+    "isActive": "Active user permission must be [true, false]",
+    "oldPassword": "Old password is incorrect",
+    "loginForm": {
+      "label": "Login",
+      "username": "Username",
+      "password": "Password",
+      "forgotPassword": "Forgot Password?",
+      "noAccount": "Don't have an account?",
+      "newAccount": "New Account"
+    },
+    "signupForm": {
+      "label": "New Account",
+      "name": "Name",
+      "username": "Username",
+      "email": "Email",
+      "password": "Password",
+      "confirmPassword": "Confirm Password",
+      "haveAccount": "Already have an account?",
+      "login": "Login"
+    },
+    "forgotPasswordForm": {
+      "label": "Forgot Password",
+      "text": "Please enter your email to receive a password reset message",
+      "email": "Email"
+    },
+    "resetPasswordForm": {
+      "label": "Reset Password",
+      "password": "New Password",
+      "confirmPassword": "Confirm New Password"
+    }
+  },
+  "settings": {
+    "updatePassword": {
+      "label": "Change Password",
+      "text": "Change your password at any time",
+      "form": {
+        "oldPassword": {
+          "label": "Old Password",
+          "required": "Old password is required"
+        },
+        "newPassword": {
+          "label": "New Password",
+          "validate": {
+            "required": "New password is required",
+            "minLength": "Password must be at least 8 characters long"
+          }
+        },
+        "confirmPassword": {
+          "label": "Confirm New Password",
+          "validate": {
+            "required": "Password confirmation is required",
+            "notMatch": "Passwords do not match"
+          }
+        }
+      }
+    },
+    "display": {
+      "label": "Change Language and Theme",
+      "text": "Change display language and theme",
+      "content": {
+        "theme": {
+          "label": "Select Display Color",
+          "light": "Light",
+          "dark": "Dark"
+        },
+        "lang": {
+          "label": "Select Display Language",
+          "ar": "Arabic",
+          "en": "English"
+        }
+      }
+    },
+    "deactivate": {
+      "label": "Deactivate Account",
+      "text": "Learn about deactivating your account",
+      "confirm": "Are you sure you want to deactivate your account?",
+      "content": {
+        "first": {
+          "label": "This will deactivate your account",
+          "text": "You are about to begin the process of deactivating your account on Ethraa. Your name, username, and profile will no longer be visible, and your posts will not be displayed."
+        },
+        "second": {
+          "label": "Other things you should know",
+          "text": "You can reactivate your account on Ethraa after deactivating it, in case it was deactivated by mistake or unintentionally at any time."
+        },
+        "last": {
+          "label": "Will the account be deleted after a certain period?",
+          "text": "Your account will not be deleted after deactivation, and you can reactivate it at any time."
+        }
+      }
+    }    
+  },
+  "datetime": {
+    "ago": "ago",
+    "few": "a few moments ago",
+    "minute": "minute",
+    "hour": "hour",
+    "day": "day"
+  },
+  "notFound": {
+    "title": "404",
+    "text": "The page you are looking for could not be found. Please check if the URL is correct."
+  }
+}
