@@ -17,6 +17,10 @@
 - Dark Mode
 - Light Mode
 
+## Live
+
+[ethraa app](https://ethraa.vercel.app/)
+
 ## Api Repository
 
 [ethraa-api repo](https://github.com/tkahmedkamal/ethraa-api)
