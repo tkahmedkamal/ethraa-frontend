@@ -31,6 +31,7 @@ export const uploadUserAvatarApi = async (
     { file },
     lang,
     false,
+    true,
   );
 };
 

@@ -1,11 +1,28 @@
 import { AxiosError } from "axios";
 import { axiosConfig } from "../config";
 
-const headers = (token: string | null, lang: string | undefined) => {
-  return {
+const headers = (
+  token: string | null,
+  lang: string | undefined,
+  formData = false,
+) => {
+  let headers: {
+    Authorization: string;
+    "Accept-Language": string;
+    "Content-Type"?: string;
+  } = {
     Authorization: `Bearer ${token}`,
     "Accept-Language": lang || "ar",
   };
+
+  if (formData) {
+    headers = {
+      ...headers,
+      "Content-Type": "multipart/form-data",
+    };
+  }
+
+  return headers;
 };
 
 const handleError = (err: unknown, fromInput: boolean, removeToken = false) => {
@@ -70,12 +87,13 @@ export const update = async (
   data: any,
   lang: string | undefined,
   fromInputs = true,
+  formData = false,
 ) => {
   const token = localStorage.getItem("access_token");
 
   try {
     const res = await axiosConfig.patch(url, data, {
-      headers: headers(token, lang),
+      headers: headers(token, lang, formData),
     });
 
     return res?.data;
