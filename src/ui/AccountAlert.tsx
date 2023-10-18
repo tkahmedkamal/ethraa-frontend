@@ -25,7 +25,7 @@ const AccountAlert: React.FC = () => {
     <div className="text-md flex w-full items-start justify-center gap-2 border-b border-light-warning bg-light-warning/5 p-6 text-light-warning dark:border-dark-warning dark:bg-dark-warning/5 dark:text-dark-warning">
       {isLoading && (
         <span className="mb-0">
-          <LoadingIcon variant="white" />
+          <LoadingIcon variant="normal" />
         </span>
       )}
       {t("alert.activeAccount")}
