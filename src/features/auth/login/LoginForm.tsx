@@ -21,7 +21,7 @@ const LoginForm: React.FC = () => {
     <>
       <Register label="registration.loginForm.label">
         <Formik
-          initialValues={{ username: "user1", password: "user1234" }}
+          initialValues={{ username: "ethraaApp", password: "user1234" }}
           validationSchema={loginSchema}
           onSubmit={(values: ILogin) => login(values)}
         >
