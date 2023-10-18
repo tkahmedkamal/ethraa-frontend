@@ -216,8 +216,10 @@ export interface IUser {
 export interface IAuthContext {
   user?: IUser | null;
   isAuthenticated: boolean;
-  setUser: Dispatch<SetStateAction<IUser | null>>;
+  theme: "dark" | "light";
+  setUser: Dispatch<SetStateAction<IUser>>;
   setIsAuthenticated: Dispatch<SetStateAction<boolean>>;
+  setTheme: Dispatch<SetStateAction<"dark" | "light">>;
 }
 
 export interface IPost {

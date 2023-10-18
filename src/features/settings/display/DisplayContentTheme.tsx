@@ -4,17 +4,26 @@ import { Card } from "../../../ui";
 
 const DisplayContentTheme: React.FC = () => {
   const { t } = useTranslation();
-  const { user } = useAuthCtx();
+  const { setTheme, theme } = useAuthCtx();
   const { updateTheme } = useTheme();
 
-  const variants = {
-    lightMode: !user?.isDarkMode
-      ? "border-primary-primary text-primary-primary bg-light-default"
-      : "",
+  const handleSwitchTheme = (mode: "dark" | "light") => {
+    const isDarkMode = mode === "dark";
 
-    darkMode: user?.isDarkMode
-      ? "dark:border-primary-primary dark:text-primary-primary dark:bg-dark-default"
-      : "",
+    setTheme(mode);
+    updateTheme(isDarkMode);
+  };
+
+  const variants = {
+    lightMode:
+      theme === "light"
+        ? "border-primary-primary text-primary-primary bg-light-default"
+        : "",
+
+    darkMode:
+      theme === "dark"
+        ? "dark:border-primary-primary dark:text-primary-primary dark:bg-dark-default"
+        : "",
   };
 
   return (
@@ -25,7 +34,7 @@ const DisplayContentTheme: React.FC = () => {
       <div className="flex items-center gap-3">
         <div
           className={`display-item ${variants.lightMode}`}
-          onClick={() => updateTheme(false)}
+          onClick={() => handleSwitchTheme("light")}
         >
           <span className="material-icons-outlined text-md">wb_sunny</span>
           {t("settings.display.content.theme.light")}
@@ -33,7 +42,7 @@ const DisplayContentTheme: React.FC = () => {
 
         <div
           className={`display-item ${variants.darkMode}`}
-          onClick={() => updateTheme(true)}
+          onClick={() => handleSwitchTheme("dark")}
         >
           <span className="material-icons-outlined text-md">dark_mode</span>
           {t("settings.display.content.theme.dark")}

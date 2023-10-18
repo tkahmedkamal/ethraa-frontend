@@ -4,15 +4,15 @@ import { useAuthCtx } from "../hooks";
 
 const useAppLogic = () => {
   const { i18n } = useTranslation();
-  const { user } = useAuthCtx();
+  const { user, theme } = useAuthCtx();
 
   useEffect(() => {
-    if (user && user?.isDarkMode) {
+    if (theme === "dark") {
       document.body.parentElement?.classList.add("dark");
     } else {
       document.body.parentElement?.classList.remove("dark");
     }
-  }, [user]);
+  }, [theme]);
 
   useEffect(() => {
     if (user && user?.language === "en") {
