@@ -80,6 +80,10 @@
   .display-item {
     @apply flex basis-1/2 cursor-pointer items-center gap-2 rounded-lg border border-light-divider p-4 font-bold text-light-title dark:border-dark-divider dark:text-dark-title;
   }
+
+  .switch-lang:has(input[type="radio"]:checked) {
+    @apply border-primary-primary bg-light-default text-primary-primary dark:border-primary-primary dark:bg-dark-default dark:text-primary-primary;
+  }
 }
 
 .heart {

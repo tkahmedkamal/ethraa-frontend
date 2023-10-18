@@ -1,18 +1,13 @@
+import { Form, Formik } from "formik";
 import { useTranslation } from "react-i18next";
-import { Card } from "../../../ui";
+import { Button, Card, Input } from "../../../ui";
 import { useAuthCtx, useLanguage } from "../../../hooks";
 import { ar, en } from "../../../assets";
 
 const DisplayContentLanguage: React.FC = () => {
   const { t } = useTranslation();
   const { user } = useAuthCtx();
-  const { updateLanguage } = useLanguage();
-
-  const lang = (lang: string) => {
-    return lang === user?.language
-      ? "dark:border-primary-primary border-primary-primary dark:text-primary-primary text-primary-primary dark:bg-dark-default bg-light-default"
-      : "";
-  };
+  const { updateLanguage, isLoading } = useLanguage();
 
   return (
     <Card>
@@ -20,23 +15,57 @@ const DisplayContentLanguage: React.FC = () => {
         {t("settings.display.content.lang.label")}
       </h3>
 
-      <div className="flex items-center gap-3">
-        <div
-          className={`display-item ${lang("ar")}`}
-          onClick={() => updateLanguage("ar")}
-        >
-          <img src={ar} alt="Arabic" width={24} height={24} />
-          {t("settings.display.content.lang.ar")}
-        </div>
+      <Formik
+        initialValues={{ language: user?.language }}
+        onSubmit={(values) => updateLanguage(values.language as string)}
+        enableReinitialize
+      >
+        {({ values, setFieldValue }) => (
+          <Form className="space-y-6">
+            <div className="flex items-center gap-3">
+              <label
+                htmlFor="inputLangArabic"
+                className={`display-item switch-lang`}
+              >
+                <Input
+                  type="radio"
+                  name="language"
+                  value="ar"
+                  id="inputLangArabic"
+                  hidden
+                  onChange={() => setFieldValue("language", "ar")}
+                  checked={values.language === "ar"}
+                />
 
-        <div
-          className={`display-item ${lang("en")}`}
-          onClick={() => updateLanguage("en")}
-        >
-          <img src={en} alt="Arabic" width={24} height={24} />
-          {t("settings.display.content.lang.en")}
-        </div>
-      </div>
+                <img src={ar} alt="Arabic" width={24} height={24} />
+                {t("settings.display.content.lang.ar")}
+              </label>
+
+              <label
+                htmlFor="inputLangEnglish"
+                className={`display-item switch-lang`}
+              >
+                <Input
+                  type="radio"
+                  name="language"
+                  value="en"
+                  id="inputLangEnglish"
+                  hidden
+                  onChange={() => setFieldValue("language", "en")}
+                  checked={values.language === "en"}
+                />
+
+                <img src={en} alt="English" width={24} height={24} />
+                {t("settings.display.content.lang.en")}
+              </label>
+            </div>
+
+            <Button type="submit" loading={isLoading}>
+              {t("button.updateLang")}
+            </Button>
+          </Form>
+        )}
+      </Formik>
     </Card>
   );
 };

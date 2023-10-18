@@ -292,6 +292,9 @@ export interface IFieldProps {
   id?: string;
   className?: string;
   disabled?: boolean;
+  hidden?: boolean;
+  checked?: boolean;
+  onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
 export interface ISelect extends IFieldProps {
