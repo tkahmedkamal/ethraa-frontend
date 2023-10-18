@@ -36,6 +36,7 @@ const DeactivateContent: React.FC = () => {
               btnCloseLabel="button.cancel"
               handler={() => deactivate()}
               loading={isLoading}
+              danger
             />
           </Modal.Content>
         </Modal>

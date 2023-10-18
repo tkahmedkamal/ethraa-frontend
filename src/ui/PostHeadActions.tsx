@@ -69,6 +69,7 @@ const PostHeadActions: React.FC<IPostHeadActions> = ({ postId, userId }) => {
           btnCloseLabel="button.cancel"
           loading={isLoading}
           handler={() => deletePost(postId as string)}
+          danger
         />
       </Modal.Content>
     </Modal>

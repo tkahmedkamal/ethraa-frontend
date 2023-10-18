@@ -263,6 +263,7 @@ export interface IConfirm {
   btnActionLabel: string;
   btnCloseLabel: string;
   loading: boolean;
+  danger?: boolean;
   handler: () => void;
   close?: () => void;
 }

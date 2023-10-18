@@ -58,7 +58,7 @@
   }
 
   .btn-outlined {
-    @apply border border-primary-primary text-primary-primary duration-500 hover:bg-primary-primary/10;
+    @apply border border-light-divider text-light-text duration-500 hover:bg-primary-primary/10 dark:border-dark-divider dark:text-dark-text;
   }
 
   .disabled {
@@ -66,7 +66,7 @@
   }
 
   .outlined-disabled {
-    @apply cursor-not-allowed border border-light-divider text-light-text/40 hover:border-light-divider dark:border-dark-divider dark:text-dark-text/40 dark:hover:border-dark-divider;
+    @apply cursor-not-allowed border border-light-divider/70 text-light-text/20 dark:border-dark-divider/70 dark:text-dark-text/20;
   }
 
   .reaction {
