@@ -1,13 +1,14 @@
 import { useTranslation } from "react-i18next";
 import { useAuthCtx, useTheme } from "../../../hooks";
 import { Card } from "../../../ui";
+import { IThemeMode } from "../../../interfaces";
 
 const DisplayContentTheme: React.FC = () => {
   const { t } = useTranslation();
   const { setTheme, theme } = useAuthCtx();
   const { updateTheme } = useTheme();
 
-  const handleSwitchTheme = (mode: "dark" | "light") => {
+  const handleSwitchTheme = (mode: IThemeMode) => {
     const isDarkMode = mode === "dark";
 
     setTheme(mode);

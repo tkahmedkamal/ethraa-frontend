@@ -213,13 +213,15 @@ export interface IUser {
   accountVerificationTokenExpiration?: Date;
 }
 
+export type IThemeMode = "dark" | "light";
+
 export interface IAuthContext {
   user?: IUser | null;
   isAuthenticated: boolean;
-  theme: "dark" | "light";
+  theme: IThemeMode;
   setUser: Dispatch<SetStateAction<IUser>>;
   setIsAuthenticated: Dispatch<SetStateAction<boolean>>;
-  setTheme: Dispatch<SetStateAction<"dark" | "light">>;
+  setTheme: Dispatch<SetStateAction<IThemeMode>>;
 }
 
 export interface IPost {
