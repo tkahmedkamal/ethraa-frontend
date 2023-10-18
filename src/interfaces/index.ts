@@ -219,7 +219,7 @@ export interface IAuthContext {
   user?: IUser | null;
   isAuthenticated: boolean;
   theme: IThemeMode;
-  setUser: Dispatch<SetStateAction<IUser>>;
+  setUser: Dispatch<SetStateAction<IUser | any>>;
   setIsAuthenticated: Dispatch<SetStateAction<boolean>>;
   setTheme: Dispatch<SetStateAction<IThemeMode>>;
 }
