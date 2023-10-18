@@ -12,7 +12,10 @@ const DisplayContentTheme: React.FC = () => {
     const isDarkMode = mode === "dark";
 
     setTheme(mode);
-    updateTheme(isDarkMode);
+
+    if (theme !== mode) {
+      updateTheme(isDarkMode);
+    }
   };
 
   const variants = {
