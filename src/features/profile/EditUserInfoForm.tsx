@@ -83,7 +83,7 @@ const EditUserInfoForm: React.FC<IEditUserInfoForm> = ({ close }) => {
 
             <div className="flex items-center gap-3">
               <Button type="submit" loading={isLoading}>
-                {t("button.editPost")}
+                {t("button.updateMe")}
               </Button>
               <Button type="button" variant="outlined" handler={close}>
                 {t("button.cancel")}
