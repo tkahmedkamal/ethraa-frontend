@@ -1,10 +1,11 @@
-import { useRef } from "react";
+import { useRef, useState, useEffect } from "react";
 import { useLocation, useSearchParams } from "react-router-dom";
 import { formatTimeDifference } from "../helpers";
 import { useAuthCtx, useDislikePost, useLikePost } from "../hooks";
 import { IPost } from "../interfaces";
 
 const usePostLogic = ({ _id, user, createdAt, likes, dislikes }: IPost) => {
+  const [isLiked, setIsLiked] = useState<boolean>(false);
   const [searchParam] = useSearchParams();
   const audioRef = useRef<HTMLAudioElement | null>(null);
   const { pathname } = useLocation();
@@ -42,7 +43,12 @@ const usePostLogic = ({ _id, user, createdAt, likes, dislikes }: IPost) => {
     }
   };
 
+  useEffect(() => {
+    setIsLiked(isLoggedInLike);
+  }, [isLoggedInLike]);
+
   const handleLike = () => {
+    setIsLiked((prev) => !prev);
     like(_id as string);
     !isLoggedInLike && likeDislikeSound();
   };
@@ -60,6 +66,7 @@ const usePostLogic = ({ _id, user, createdAt, likes, dislikes }: IPost) => {
     isLoadingDislike,
     isLoggedInLike,
     isLoggedInDislike,
+    isLiked,
     audioRef,
     handleLike,
     handleDislike,

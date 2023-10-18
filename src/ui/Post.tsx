@@ -1,3 +1,4 @@
+import { LoaderIcon } from "react-hot-toast";
 import { Badge, Card, LoadingIcon, PostHeadActions, PostUserInfo } from ".";
 import { Size } from "../enums";
 import { IPost } from "../interfaces";
@@ -16,8 +17,9 @@ const Post: React.FC<IPost> = ({
     pathname,
     userData,
     time,
-    isLoggedInLike,
+    isLiked,
     isLoggedInDislike,
+    isLoadingLike,
     isLoadingDislike,
     audioRef,
     loggedInUser,
@@ -47,7 +49,7 @@ const Post: React.FC<IPost> = ({
             <div className="flex items-center gap-2">
               <div
                 className={`reaction h-[34px] ${
-                  isLoggedInLike
+                  isLiked
                     ? "!border-common-accent/10 bg-common-accent/5 !text-common-accent"
                     : null
                 }`}
@@ -55,7 +57,7 @@ const Post: React.FC<IPost> = ({
               >
                 <div
                   className={`heart ${
-                    isLoggedInLike
+                    isLiked
                       ? `is_animating ${
                           loggedInUser?.language === "ar"
                             ? "bg-right"
@@ -68,8 +70,9 @@ const Post: React.FC<IPost> = ({
                       : "-bg-left hover:bg-left"
                   }`}
                 />
+
                 <span className="relative -right-4 left-4">
-                  {likes?.length}
+                  {isLoadingLike ? <LoaderIcon /> : likes?.length}
                 </span>
               </div>
 
