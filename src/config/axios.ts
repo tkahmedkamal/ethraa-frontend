@@ -5,5 +5,6 @@ export const axiosConfig = axios.create({
   headers: {
     "Accept-Language": "ar",
     "Content-Type": "application/json",
+    "Access-Control-Allow-Origin": "*",
   },
 });
